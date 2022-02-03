@@ -6,7 +6,7 @@ const router = express.Router();
 const {NP_HOST, NP_API_KEY} = process.env;
 
 
-router.post('/getCities', async (req, res) => {
+router.get('/getCities', async (req, res) => {
 
     const cities = await axios.post(NP_HOST, {
         "modelName": "Address",
