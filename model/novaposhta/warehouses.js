@@ -7,6 +7,8 @@ const warehousesSchema = Schema({
     Number: String,
     CityRef: String,
     CityDescriptionRu: String,
+    CategoryOfWarehouse: String,
+    TypeOfWarehouse: String
 })
 
 
