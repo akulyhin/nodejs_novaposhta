@@ -7,7 +7,7 @@ router.post('/getCities', async (req, res) => {
     const {query} = req.body;
 
     const reg = new RegExp(`/^${query}/i`);
-    const cities = await novaposhta.Cities.find({DescriptionRu: { $regex: query}}).limit(5).sort({DescriptionRu:1});
+    const cities = await novaposhta.Cities.find({DescriptionRu: { $regex: reg}}).limit(5).sort({DescriptionRu:1});
 
     res.json({
         status: "success",
