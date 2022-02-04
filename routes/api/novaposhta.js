@@ -45,7 +45,6 @@ router.post('/getWarehouses', async (req, res) => {
     })
 })
 
-
 router.post('/getAddress', async (req, res) => {
 
     const {Ref, query} = req.body
@@ -61,9 +60,6 @@ router.post('/getAddress', async (req, res) => {
                 })
                 .then(res => res.data.data)
                 .catch(error => console.log(error))
-
-    
-    
     
         res.json({
             status: "success",
