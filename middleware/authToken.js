@@ -7,9 +7,7 @@ const {User} = require('../model');
 const authToken = () => {
     return async(req, res, next) => {
 
-        console.log(req.headers);
         const {authorization} = req.headers;
-        console.log(authorization);
 
         if (!authorization) {
             res.status(401).json({

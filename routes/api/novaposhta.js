@@ -5,11 +5,11 @@ const {controllerWrapper, authToken} = require('../../middleware');
 
 const router = express.Router();
 
-router.post('/getCities', authToken(), controllerWrapper(ctrl.getCities));
+router.post('/getCities', controllerWrapper(ctrl.getCities));
 
-router.post('/getWarehouses', authToken(), controllerWrapper(ctrl.getWarehouses));
+router.post('/getWarehouses', controllerWrapper(ctrl.getWarehouses));
 
-router.post('/getAddress', authToken(), controllerWrapper(ctrl.getAddress))
+router.post('/getAddress', controllerWrapper(ctrl.getAddress))
 
 
 module.exports = router;
