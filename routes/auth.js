@@ -12,6 +12,8 @@ router.post("/login", validation(loginSchema), controllerWrapper(ctrl.login))
 
 router.get("/logout", authToken(), controllerWrapper(ctrl.logout))
 
+router.post('/getUser', controllerWrapper(ctrl.getUser));
+
 router.get('/auth', authToken(), async (req, res) => {
     res.json({
         status: 'success',
