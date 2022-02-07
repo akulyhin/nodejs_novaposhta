@@ -8,7 +8,10 @@ const logout = async (req, res) => {
    res.status(204).json({
        status: "success",
        code: 204,
-       message: "logout success"
+       data:{
+        message: "logout success"
+       }
+       
    });
 
 };
