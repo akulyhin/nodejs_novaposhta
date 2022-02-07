@@ -17,8 +17,6 @@ const register = async (req, res) => {
 
    const newUser = await User.create({email, password: hashPassword});
 
-   console.log(newUser._id);
-
    const payload = {
         id: newUser._id
     }
@@ -31,8 +29,9 @@ const register = async (req, res) => {
         status: "success",
         code: 201,
         message: "Register success",
-        data: {
-            token
+        user: {
+            token,
+            email: newUser.email
         }
     })
 };
