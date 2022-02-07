@@ -10,8 +10,6 @@ router.post('/getCities', async (req, res) => {
     
     const reg = new RegExp('^'+query+'','i');
 
-    // /^Киев/i
-
     const cities = await novaposhta.Cities.find({DescriptionRu: { $regex: reg}}).limit(15).sort({DescriptionRu:1});
 
     res.json({
