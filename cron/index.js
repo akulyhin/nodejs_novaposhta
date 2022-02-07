@@ -1,5 +1,4 @@
 const cron = require('node-cron');
-
 const {novaposhta} = require('../controllers');
 
 // *    *    *    *    *    *

@@ -1,12 +1,25 @@
 const {User} = require("../../model");
+const Joi = require('joi');
 
+const joiSchema = Joi.object({
+email: Joi.string().email()
+})
 
 const getUser = async (req, res) => {
     const {email} = req.body;
 
-    const user = await User.findOne({email});
+    const {error} = joiSchema.validate(req.body);
 
-    console.log(user);
+    if (error) {
+        res.json({
+            status: "error",
+            code: 400,
+            message: "Incorrect email"
+        })
+        return
+    }
+
+    const user = await User.findOne({email});
 
     if (user) {
         res.json({
